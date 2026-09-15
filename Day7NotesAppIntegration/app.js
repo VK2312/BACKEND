@@ -9,7 +9,7 @@ dbConnect();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("Okay i am running");
+    res.send("Okay i Notes running");
 })
 
 app.use("/notes", notesRoute);

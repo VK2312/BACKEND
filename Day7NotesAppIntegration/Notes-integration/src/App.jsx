@@ -55,7 +55,7 @@ const App = () => {
       getAllNotes();
     };
 
-
+    //delete function
     let deleteNote = async (id) => {
       try {
         let res = await axios.delete(`http://localhost:3000/notes/${id}`);

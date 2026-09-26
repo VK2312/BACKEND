@@ -19,9 +19,10 @@ const getAllNotesController = async (req, res) => {
 const createNotesController = async (req, res) => {
     try {
         let {title, description} = req.body;
+        console.log(req.body);
         let newNote = await notesModel.create({
             title, 
-            description
+            description,
         });
 
         return res.status(201).json({

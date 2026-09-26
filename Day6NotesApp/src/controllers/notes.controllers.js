@@ -1,5 +1,6 @@
 const NotesModel = require("../models/note.model");
 
+
 //GET ALL NOTES
 const getAllNotesController = async (req, res) => {
     try {

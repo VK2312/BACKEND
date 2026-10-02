@@ -1,12 +1,11 @@
-import upload from "../config/multer.js";
 
 
-const uploadController =  [
+const uploadController =  
     //FOR UPLOADING A SINGLE FILE
     // upload.single("profilePic"), (req, res) => {
 
         //FOR UPLOADING MULTIPLE FILES
-    upload.array("images"), (req, res) => {
+    (req, res) => {
     
         try{
             let files = req.files;
@@ -27,6 +26,5 @@ const uploadController =  [
         }
     
     }
-];
 
 export default uploadController;

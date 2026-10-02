@@ -1,9 +1,9 @@
 import Imagekit from 'imagekit';
 
 const storageInstance = new Imagekit({
-    urlEndPoint:process.env.IK_URL_ENDPOINT,
-    publickey:process.env.IK_PUBLIC_KEY,
-    privatekey:IK_PRIVATE_KEY,
+    urlEndpoint:process.env.IK_URL_ENDPOINT,
+    publicKey:process.env.IK_PUBLIC_KEY,
+    privateKey:process.env.IK_PRIVATE_KEY,
 });
 
 export const sendFiles = async (file, fileName) => {

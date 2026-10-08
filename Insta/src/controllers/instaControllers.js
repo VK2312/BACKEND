@@ -1,6 +1,7 @@
 import {sendFiles} from '../services/storage.services.js';
 import postModel from '../models/insta.Model.js';
 
+//creat post controller to create a post and upload the image on imagekit
 export const createPostController = async (req, res) => {
     let file = req.file;
     let {caption} = req.body;
@@ -29,13 +30,14 @@ export const createPostController = async (req, res) => {
     });
 }
 
+//controller used to get all the images
 export const getAllPostController = async (req, res) => {
     try {
         const allPost = await postModel.find();
         return res.status(200).json(
             {
             success:true,
-            message:"getting all the post",
+            message:"all post fetched successfully",
             data:allPost
             }
         );

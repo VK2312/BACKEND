@@ -11,8 +11,7 @@ const authenticate = async (req, res, next) => {
         const token = req.headers.authorization;
         const data = jwt.verify(token, JWTSECRET);
         const user = await userAuthModels.findById(data.id);
-
-    req.user = user;
+        req.user = user; //Here we are creating a "user" property
         next();
     } catch (error) {
         res.status(401).json({

@@ -11,7 +11,11 @@ const JWTSECRET = process.env.JWTSECRET
 const registerController = async (req, res) => {
 
     const {email, name, password} = req.body;
-    const user = await userAuthModels.create({email, name, password: await bcrypt.hash(password, 10)});
+    const user = await userAuthModels.create({
+        email, 
+        name, 
+        password: await bcrypt.hash(password, 10)
+    });
     // console.log(user);
 
     //Token creation
@@ -23,9 +27,10 @@ const registerController = async (req, res) => {
         message:"token generated successfully",
         data:{
             user:{
-                email,
-                password,
-                name},
+                    email,
+                    password,
+                    name
+                },
                 token
             },
     });

@@ -18,9 +18,10 @@ export const createPostController = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-
+    // Here sendFiles function shall give us a URL which we later store in Database
     let uploadImage =  await sendFiles(file.buffer, file.originalname);
 
+    // The URL given by sendFiles function and caption is being stored in Database
     let post = await postModel.create({caption:caption, image:uploadImage.url});
 
     return res.status(201).json({

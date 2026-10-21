@@ -70,6 +70,7 @@ const getMeController = async (req, res) => {
             user:{
                 name : user.name,
                 email : user.email
+                
             }
         }
         });
